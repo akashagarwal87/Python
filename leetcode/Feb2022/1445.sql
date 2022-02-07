@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select a.sale_date, (a.sold_num - o.sold_num) as 'diff' from (select sale_date,sold_num from sales where fruit='apples') a, (select sale_date,sold_num from sales where fruit='oranges') o where a.sale_date=o.sale_date order by a.sale_date
