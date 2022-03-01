@@ -1,0 +1,2 @@
+-- Write your MySQL query statement below
+SELECT C.PRODUCT_ID,ROUND(SUM(C.TOTAL_PRICE)/SUM(C.UNITS),2) 'AVERAGE_PRICE' FROM (SELECT A.product_id,B.purchase_date,A.PRICE,(A.PRICE*B.UNITS) 'TOTAL_PRICE',B.UNITS FROM PRICES A, UNITSSOLD B WHERE A.product_id=B.product_id AND B.purchase_date between a.start_date and a.end_date) C GROUP BY C.product_id
